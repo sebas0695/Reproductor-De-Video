@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reproductor de Video</title>
+<style>
+  video {
+    display: none;
+  }
+</style>
+</head>
+<body>
+<video id="videoPlayer" autoplay>
+  <source src="https://archive.org/download/ver-winnie-the-pooh-blood-and-honey-2-2024-pelicula-online-espanol-latino/Winnie%20the%20Pooh%20Blood%20and%20Honey%202%20(2024).mp4" type="video/mp4">
+  Tu navegador no soporta la reproducción de videos.
+</video>
+<button id="generateLinkButton">Generar Enlace</button>
+<p id="generatedLink"></p>
+
+<script>
+const videoPlayer = document.getElementById('videoPlayer');
+const generateLinkButton = document.getElementById('generateLinkButton');
+const generatedLink = document.getElementById('generatedLink');
+
+generateLinkButton.addEventListener('click', () => {
+  const videoSource = videoPlayer.querySelector('source').src;
+  generatedLink.textContent = `Enlace generado: ${videoSource}`;
+});
+</script>
+</body>
+</html>
